@@ -1,6 +1,8 @@
 package project.moviedatabase;
 
-public class Movie
+import java.io.Serializable;
+
+public class Movie implements Serializable
 {
     private String title;
     private int yearOfRelease;

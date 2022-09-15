@@ -36,7 +36,7 @@ public class ReadThreadServer implements Runnable {
             System.out.println(e);
         } finally {
             try {
-                networkUtil.close();
+                networkUtil.closeConnection();
             } catch (IOException e) {
                 e.printStackTrace();
             }

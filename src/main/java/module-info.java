@@ -8,6 +8,4 @@ module project.moviedatabase {
 
     opens project.moviedatabase to javafx.fxml;
     exports project.moviedatabase;
-    exports controller;
-    opens controller to javafx.fxml;
 }

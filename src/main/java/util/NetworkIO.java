@@ -3,26 +3,27 @@ package util;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.net.Socket;
 
-public class NetworkIO
+public class NetworkIO implements Serializable
 {
-    private final Socket socket;
-    private final ObjectInputStream ois;
-    private final ObjectOutputStream oos;
+    private Socket socket;
+    private ObjectInputStream ois;
+    private ObjectOutputStream oos;
 
     public NetworkIO(String ip, int port) throws IOException
     {
         this.socket = new Socket(ip, port);
-        this.ois = new ObjectInputStream(socket.getInputStream());
         this.oos = new ObjectOutputStream(socket.getOutputStream());
+        this.ois = new ObjectInputStream(socket.getInputStream());
     }
 
     public NetworkIO(Socket s) throws IOException
     {
         this.socket = s;
-        this.ois = new ObjectInputStream(socket.getInputStream());
         this.oos = new ObjectOutputStream(socket.getOutputStream());
+        this.ois = new ObjectInputStream(socket.getInputStream());
     }
 
     public Object read() throws IOException, ClassNotFoundException
@@ -35,7 +36,7 @@ public class NetworkIO
         oos.writeUnshared(obj);
     }
 
-    public void close() throws IOException
+    public void closeConnection() throws IOException
     {
         ois.close();
         oos.close();

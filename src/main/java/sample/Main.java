@@ -32,7 +32,7 @@ public class Main extends Application {
 
     private void connectToServer() throws IOException {
         String serverAddress = "127.0.0.1";
-        int serverPort = 33333;
+        int serverPort = 42069;
         networkUtil = new NetworkIO(serverAddress, serverPort);
         new ReadThread(this);
     }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.ShowMovieController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="640.0">
+         <children>
+            <Label fx:id="movieTitle" alignment="CENTER" layoutX="9.0" layoutY="29.0" prefHeight="39.0" prefWidth="622.0" text="Movie name">
+               <font>
+                  <Font name="Palatino Linotype" size="30.0" />
+               </font></Label>
+            <TableView fx:id="movieInfo" layoutX="14.0" layoutY="104.0" prefHeight="417.0" prefWidth="602.0">
+              <columns>
+                <TableColumn fx:id="categoryColumn" prefWidth="240.0" text="Category" />
+                <TableColumn fx:id="informationColumn" minWidth="0.0" prefWidth="361.0" text="Information" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

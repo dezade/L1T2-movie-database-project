@@ -47,7 +47,7 @@ public class ReadThread implements Runnable {
             System.out.println(e);
         } finally {
             try {
-                main.getNetworkUtil().close();
+                main.getNetworkUtil().closeConnection();
             } catch (IOException e) {
                 e.printStackTrace();
             }
