@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.NewMoviePanelController">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="640.0">
+         <children>
+            <Label layoutX="27.0" layoutY="45.0" prefHeight="40.0" prefWidth="200.0" text="Title :">
+               <font>
+                  <Font name="Palatino Linotype" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="movieTitle" layoutX="298.0" layoutY="46.0" prefHeight="39.0" prefWidth="308.0" text="movieName">
+               <font>
+                  <Font name="Palatino Linotype" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="27.0" layoutY="125.0" text="Production Company :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="prodCompTitle" layoutX="298.0" layoutY="125.0" prefHeight="31.0" prefWidth="304.0" text="prodComp">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="28.0" layoutY="191.0" prefHeight="31.0" prefWidth="224.0" text="Year of Release :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textYearOfRelease" layoutX="298.0" layoutY="183.0" promptText="Please input an integer">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </TextField>
+            <Label layoutX="27.0" layoutY="257.0" text="Genre 1 :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font></Label>
+            <Label layoutX="29.0" layoutY="324.0" text="Genre 2 (Optional) :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font></Label>
+            <Label layoutX="29.0" layoutY="389.0" text="Genre 3 (Optional) :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font></Label>
+            <Label layoutX="29.0" layoutY="456.0" text="Running Time :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font></Label>
+            <Label layoutX="27.0" layoutY="517.0" text="Budget :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font></Label>
+            <Label layoutX="28.0" layoutY="582.0" text="Revenue :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font></Label>
+            <TextField fx:id="textGenre1" layoutX="298.0" layoutY="249.0" promptText="Please input a string">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textGenre2" layoutX="298.0" layoutY="316.0" promptText="Please input a string">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textGenre3" layoutX="298.0" layoutY="381.0" promptText="Please input a string">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textRunningTime" layoutX="299.0" layoutY="451.0" prefHeight="41.0" prefWidth="314.0" promptText="Please input the time in minutes">
+               <font>
+                  <Font name="Palatino Linotype" size="20.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textBudget" layoutX="298.0" layoutY="509.0" promptText="Please input an integer">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="textRevenue" layoutX="298.0" layoutY="574.0" promptText="Please input an integer">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </TextField>
+            <Button fx:id="buttonCancel" layoutX="164.0" layoutY="641.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="buttonConfirm" layoutX="334.0" layoutY="641.0" mnemonicParsing="false" onAction="#onConfirmClick" text="Confirm">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Button>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

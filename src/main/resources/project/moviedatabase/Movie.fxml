@@ -4,20 +4,99 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.ShowMovieController">
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.ShowMovieController">
   <content>
-    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="640.0">
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="800.0">
          <children>
-            <Label fx:id="movieTitle" alignment="CENTER" layoutX="9.0" layoutY="29.0" prefHeight="39.0" prefWidth="622.0" text="Movie name">
+            <Label fx:id="movieTitle" alignment="CENTER" layoutX="100.0" layoutY="59.0" prefHeight="39.0" prefWidth="622.0" text="Movie name">
                <font>
                   <Font name="Palatino Linotype" size="30.0" />
                </font></Label>
-            <TableView fx:id="movieInfo" layoutX="14.0" layoutY="104.0" prefHeight="417.0" prefWidth="602.0">
-              <columns>
-                <TableColumn fx:id="categoryColumn" prefWidth="240.0" text="Category" />
-                <TableColumn fx:id="informationColumn" minWidth="0.0" prefWidth="361.0" text="Information" />
-              </columns>
-            </TableView>
+            <Button fx:id="movieGoBack" alignment="CENTER" layoutX="340.0" layoutY="577.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="movieTransfer" layoutX="500.0" layoutY="501.0" mnemonicParsing="false" onAction="#onTransferClick" text="Transfer this movie">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Button>
+            <Label layoutX="40.0" layoutY="129.0" text="Production Company :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="182.0" text="Year of Release :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="41.0" layoutY="232.0" text="Genre(s) :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="277.0" text="Running Time (in minutes) :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="327.0" text="Budget :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="375.0" text="Revenue :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="423.0" text="Profit :">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="buttonWatchTrailer" layoutX="102.0" layoutY="501.0" mnemonicParsing="false" onAction="#onTrailerClick" text="Watch Trailer">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Button>
+            <Label fx:id="prodComp" layoutX="400.0" layoutY="130.0" prefHeight="31.0" prefWidth="273.0" text="prodComp">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="year" layoutX="400.0" layoutY="183.0" prefHeight="31.0" prefWidth="255.0" text="year">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="genres" layoutX="400.0" layoutY="233.0" text="genres">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="runningTime" layoutX="400.0" layoutY="278.0" text="runningTime">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="budget" layoutX="400.0" layoutY="328.0" text="budget">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="revenue" layoutX="400.0" layoutY="376.0" text="revenue">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="profit" layoutX="400.0" layoutY="424.0" text="profit">
+               <font>
+                  <Font name="Palatino Linotype" size="24.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
   </content>
 </ScrollPane>

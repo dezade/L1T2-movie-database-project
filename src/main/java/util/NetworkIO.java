@@ -8,6 +8,7 @@ import java.net.Socket;
 
 public class NetworkIO implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     private Socket socket;
     private ObjectInputStream ois;
     private ObjectOutputStream oos;

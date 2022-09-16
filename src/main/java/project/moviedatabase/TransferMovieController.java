@@ -1,31 +1,22 @@
 package project.moviedatabase;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableListValue;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import util.NetworkIO;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
 
-public class MovieListController implements Serializable
+public class TransferMovieController implements Serializable
 {
     private static final long serialVersionUID = 0L;
-    public Button buttonMovieListGoBack;
+    public Button buttonTransferListGoBack;
     private Main main;
     @FXML
     public Label headerLabel;
@@ -41,11 +32,12 @@ public class MovieListController implements Serializable
     {
         this.main = main;
     }
+
     public void init(ProductionCompany productionCompany) throws IOException, ClassNotFoundException {
         this.productionCompany = productionCompany;
         //productionCompany.updateMovies();
         assert this.headerLabel != null;
-        this.headerLabel.setText("List of movies for " + productionCompany.title);
+        this.headerLabel.setText("Please select the movie to be transferred:");
         observableList = FXCollections.observableArrayList();
         nameColumn.setCellValueFactory(new PropertyValueFactory<Movie, String>("title"));
         observableList.addAll(productionCompany.movies);
@@ -56,9 +48,10 @@ public class MovieListController implements Serializable
         tableViewMovies.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             clickedMovie = tableViewMovies.getSelectionModel().getSelectedItem().getTitle();
             try {
-                main.showMovie(clickedMovie, productionCompany);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
+                main.showTransferPanel(clickedMovie, this.productionCompany);
+            } catch (Exception e)
+            {
+                e.printStackTrace();
             }
         });
     }

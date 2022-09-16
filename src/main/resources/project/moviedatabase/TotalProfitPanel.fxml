@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.TotalProfitPanelController">
+    <children>
+        <Label fx:id="headerLabel" alignment="CENTER" layoutX="188.0" layoutY="75.0" prefHeight="35.0" prefWidth="397.0" text="Total profit of">
+            <font>
+                <Font name="Palatino Linotype" size="27.0" />
+            </font>
+        </Label>
+        <Button fx:id="buttonGoBack" layoutX="325.0" layoutY="263.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+      <Label fx:id="totalProfit" alignment="CENTER" layoutX="306.0" layoutY="162.0" text="totalProfit">
+         <font>
+            <Font name="Palatino Linotype" size="36.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

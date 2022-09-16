@@ -13,22 +13,48 @@ import java.util.List;
 
 public class ProductionCompany implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     public String title;
     public long maxRevenue;
     public long totalProfit;
     public int latestYear;
     public List<Movie> movies;
+    public NetworkIO networkIO;
+    //public ProductionCompanyRead readThread;
 
     public ProductionCompany(String title) throws IOException
     {
         this.title = title;
-//        prodCompLabel.setText(title);
         maxRevenue = -1;
         totalProfit = 0;
         latestYear = -1;
         movies = new ArrayList<>();
     }
 
+    public void updateMovies() throws IOException, ClassNotFoundException {
+        //networkIO.write(this);
+        networkIO.write(title);
+        Object obj = networkIO.read();
+        if(obj instanceof ProductionCompany)
+        {
+            this.movies = ((ProductionCompany) obj).movies;
+        }
+    }
+
+    public void updateAll()
+    {
+        this.latestYear = -1;
+        this.maxRevenue = -1;
+        this.totalProfit = 0;
+        for (Movie m : movies)
+        {
+            if(m.getYearOfRelease() > this.latestYear)
+                this.latestYear = m.getYearOfRelease();
+            if(m.getRevenue() > this.maxRevenue)
+                this.maxRevenue = m.getRevenue();
+            this.totalProfit += m.getProfit();
+        }
+    }
 
     public void addMovie(Movie m)
     {
@@ -40,8 +66,9 @@ public class ProductionCompany implements Serializable
         this.totalProfit += m.getProfit();
     }
 
-    public List<Movie> mostRecentMovies()
-    {
+    public List<Movie> mostRecentMovies() throws IOException, ClassNotFoundException {
+        updateMovies();
+        updateAll();
         List<Movie> result = new ArrayList<>();
         for(Movie m : this.movies)
         {
@@ -53,12 +80,13 @@ public class ProductionCompany implements Serializable
         return result;
     }
 
-    public List<Movie> maximumRevenueMovies()
-    {
+    public List<Movie> maximumRevenueMovies() throws IOException, ClassNotFoundException {
+        updateMovies();
+        updateAll();
         List<Movie> result = new ArrayList<>();
         for(Movie m : this.movies)
         {
-            if(m.getProfit() == this.maxRevenue)
+            if(m.getRevenue() == this.maxRevenue)
             {
                 result.add(m);
             }
@@ -66,7 +94,9 @@ public class ProductionCompany implements Serializable
         return result;
     }
 
-    public long getTotalProfit() {
+    public long getTotalProfit() throws IOException, ClassNotFoundException {
+        updateMovies();
+        updateAll();
         return totalProfit;
     }
     

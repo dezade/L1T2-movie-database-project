@@ -5,8 +5,9 @@ import project.moviedatabase.Movie;
 import java.io.*;
 import java.util.List;
 
-public class FileIO
+public class FileIO implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     public static void fileInput(List<Movie> movieList, String fileName) throws IOException
     {
         BufferedReader br = new BufferedReader(new FileReader(fileName));
@@ -17,6 +18,8 @@ public class FileIO
                 break;
             String[] info = input.split(",");
             Movie m = new Movie(info);
+            if(m.getProductionCompany().isEmpty())
+                m.setProductionCompany("N/A");
             movieList.add(m);
         }
         br.close();
@@ -36,7 +39,14 @@ public class FileIO
                 bw.write(",");
             }
             bw.write(String.valueOf(m.getRunningTime())); bw.write(",");
-            bw.write(m.getProductionCompany()); bw.write(",");
+            if(m.getProductionCompany().equalsIgnoreCase("N/A"))
+            {
+                bw.write(",");
+            }
+            else
+            {
+                bw.write(m.getProductionCompany()); bw.write(",");
+            }
             bw.write(String.valueOf(m.getBudget())); bw.write(",");
             bw.write(String.valueOf(m.getRevenue()));
             bw.write(System.lineSeparator());

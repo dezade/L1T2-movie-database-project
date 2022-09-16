@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.SearchOptionsController">
+    <children>
+        <Label alignment="CENTER" layoutX="17.0" layoutY="32.0" prefHeight="88.0" prefWidth="607.0" text="Searching Options" textAlignment="CENTER">
+            <font>
+                <Font name="Palatino Linotype" size="38.0" />
+            </font>
+        </Label>
+        <Button fx:id="buttonYearOfRelease" layoutX="147.0" layoutY="195.0" mnemonicParsing="false" onAction="#onYearOfReleaseClick" prefHeight="50.0" prefWidth="348.0" text="Search by Year of Release">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font></Button>
+        <Button fx:id="buttonGenre" alignment="CENTER" layoutX="225.0" layoutY="264.0" mnemonicParsing="false" onAction="#onGenreClick" text="Search by Genre">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonRunningTIme" alignment="CENTER" layoutX="181.0" layoutY="332.0" mnemonicParsing="false" onAction="#onRunningTimeClick" text="Search by Running Time">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonProfit" alignment="CENTER" layoutX="228.0" layoutY="545.0" mnemonicParsing="false" onAction="#onProfitClick" text="Search by Profit">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonBudget" alignment="CENTER" layoutX="219.0" layoutY="401.0" mnemonicParsing="false" onAction="#onBudgetClick" text="Search by Budget">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonRevenue" alignment="CENTER" layoutX="211.0" layoutY="472.0" mnemonicParsing="false" onAction="#onRevenueClick" text="Search by Revenue">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonSearchByTitle" layoutX="226.0" layoutY="128.0" mnemonicParsing="false" onAction="#onSearchByTitleClick" text="Search by Title">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+      <Button fx:id="buttonGoBack" alignment="CENTER" layoutX="268.0" layoutY="626.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back">
+         <font>
+            <Font name="Palatino Linotype" size="24.0" />
+         </font>
+      </Button>
+    </children>
+</AnchorPane>

@@ -1,28 +1,20 @@
 package project.moviedatabase;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableListValue;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import util.NetworkIO;
 
 import java.io.IOException;
 import java.io.Serializable;
-import java.net.URL;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class MovieListController implements Serializable
+public class SearchResultListController implements Serializable
 {
     private static final long serialVersionUID = 0L;
     public Button buttonMovieListGoBack;
@@ -34,6 +26,7 @@ public class MovieListController implements Serializable
     @FXML
     private TableColumn<Movie, String> nameColumn;
     private ProductionCompany productionCompany;
+    private List<Movie> movieList;
     private ObservableList<Movie> observableList;
     String clickedMovie;
 
@@ -41,14 +34,15 @@ public class MovieListController implements Serializable
     {
         this.main = main;
     }
-    public void init(ProductionCompany productionCompany) throws IOException, ClassNotFoundException {
+    public void init(List<Movie> movieList, ProductionCompany productionCompany) throws IOException, ClassNotFoundException {
+        this.movieList = movieList;
         this.productionCompany = productionCompany;
         //productionCompany.updateMovies();
         assert this.headerLabel != null;
-        this.headerLabel.setText("List of movies for " + productionCompany.title);
+        this.headerLabel.setText("Search Results :");
         observableList = FXCollections.observableArrayList();
         nameColumn.setCellValueFactory(new PropertyValueFactory<Movie, String>("title"));
-        observableList.addAll(productionCompany.movies);
+        observableList.addAll(movieList);
         tableViewMovies.setItems(observableList);
         //tableViewMovies.getColumns().addAll(nameColumn);
 
@@ -64,6 +58,6 @@ public class MovieListController implements Serializable
     }
 
     public void onGoBackClick(ActionEvent actionEvent) throws IOException {
-        main.showProductionCompanyHomepage(productionCompany, productionCompany.networkIO);
+        main.showSearchMovieOptions(productionCompany);
     }
 }

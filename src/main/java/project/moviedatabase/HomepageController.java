@@ -11,6 +11,7 @@ import java.io.Serializable;
 
 public class HomepageController implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     private Main main;
     @FXML
     public Label prodCompLabel;
@@ -52,17 +53,20 @@ public class HomepageController implements Serializable
         return networkIO;
     }
 
-    public void onMovieListClick(ActionEvent actionEvent) throws IOException {
+    public void onMovieListClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
         main.showMovieList(this.productionCompany);
     }
 
-    public void onRecentMoviesClick(ActionEvent actionEvent) {
+    public void onRecentMoviesClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        main.showRecentMoviesList(productionCompany);
     }
 
-    public void onMaxRevClick(ActionEvent actionEvent) {
+    public void onMaxRevClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        main.showMaxRevMoviesList(productionCompany);
     }
 
-    public void onTotalProfitClick(ActionEvent actionEvent) {
+    public void onTotalProfitClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        main.showTotalProfitPanel(productionCompany);
     }
 
     public void onLogOutClick(ActionEvent actionEvent)
@@ -70,13 +74,16 @@ public class HomepageController implements Serializable
         main.showLogOutAlert(main.getStage());
     }
 
-    public void onAddMovieClick(ActionEvent actionEvent) {
+    public void onAddMovieClick(ActionEvent actionEvent) throws IOException {
+        main.showAddNewMovie(productionCompany);
     }
 
-    public void onTransferMovieClick(ActionEvent actionEvent) {
+    public void onTransferMovieClick(ActionEvent actionEvent) throws IOException, ClassNotFoundException {
+        main.showTransferMovie(productionCompany);
     }
 
-    public void onSearchMovieClick(ActionEvent actionEvent) {
+    public void onSearchMovieClick(ActionEvent actionEvent) throws IOException {
+        main.showSearchMovieOptions(productionCompany);
     }
 
 

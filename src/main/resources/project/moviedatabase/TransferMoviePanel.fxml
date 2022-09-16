@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.TransferMoviePanelController">
+
+    <children>
+        <Label layoutX="31.0" layoutY="80.0" text="Please enter the name of the recipient production company ">
+            <font>
+                <Font name="Palatino Linotype" size="27.0" />
+            </font>
+        </Label>
+        <TextField fx:id="textFieldRecipientProdComp" layoutX="110.0" layoutY="157.0" prefHeight="52.0" prefWidth="553.0" promptText="Name of the recipient production company">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </TextField>
+        <Button fx:id="buttonCancel" layoutX="217.0" layoutY="263.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+        <Button fx:id="buttonConfirm" layoutX="428.0" layoutY="263.0" mnemonicParsing="false" onAction="#onConfirmClick" text="Confirm">
+            <font>
+                <Font name="Palatino Linotype" size="24.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

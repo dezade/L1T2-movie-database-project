@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="365.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.AddNewMovieController">
+   <children>
+      <Label layoutX="35.0" layoutY="81.0" text="Please enter the name of the movie to be added:">
+         <font>
+            <Font name="Palatino Linotype" size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="newMovieNameField" layoutX="57.0" layoutY="157.0" prefHeight="52.0" prefWidth="527.0" promptText="Name of the movie">
+         <font>
+            <Font name="Palatino Linotype" size="24.0" />
+         </font>
+      </TextField>
+      <Button fx:id="buttonCancel" layoutX="166.0" layoutY="262.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel">
+         <font>
+            <Font name="Palatino Linotype" size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonContinue" layoutX="351.0" layoutY="262.0" mnemonicParsing="false" onAction="#onContinueClick" text="Continue">
+         <font>
+            <Font name="Palatino Linotype" size="24.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

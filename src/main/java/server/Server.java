@@ -5,14 +5,16 @@ import project.moviedatabase.ProductionCompany;
 import util.NetworkIO;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class Server
+public class Server implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     private static ServerSocket serverSocket;
     private static int port = 42069;
     private static final String INPUT_FILE = "movies.txt";
@@ -69,8 +71,8 @@ public class Server
             } catch (IOException | ClassNotFoundException e)
             {
                 System.out.println("Connection interrupted");
+                FileIO.fileOutput(movieList, OUTPUT_FILE);
             }
         }
-        //FileIO.fileOutput(movieList, OUTPUT_FILE);
     }
 }

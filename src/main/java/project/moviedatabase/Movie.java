@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Movie implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     private String title;
     private int yearOfRelease;
     private String[] genres = new String[3];
@@ -99,8 +100,8 @@ public class Movie implements Serializable
         return profit;
     }
 
-    public void setProfit(long profit) {
-        this.profit = profit;
+    public void setProfit() {
+        this.profit = this.revenue - this.budget;
     }
 
     /*

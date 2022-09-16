@@ -12,6 +12,7 @@ import java.io.Serializable;
 
 public class ProductionCompanyLogin implements Serializable
 {
+    private static final long serialVersionUID = 0L;
     private Main main;
     @FXML
     public TextField titleTextField;

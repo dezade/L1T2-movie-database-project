@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.moviedatabase.MaxRevMoviesListController">
+    <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="720.0" prefWidth="640.0">
+            <children>
+                <Label fx:id="headerLabel" alignment="CENTER" layoutX="15.0" layoutY="14.0" prefHeight="17.0" prefWidth="605.0" text="Max Rev Movies">
+                    <font>
+                        <Font name="Palatino Linotype" size="30.0" />
+                    </font>
+                </Label>
+                <TableView fx:id="tableViewMovies" layoutX="19.0" layoutY="123.0" prefHeight="512.0" prefWidth="596.0">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" prefWidth="595.0" text="Movies" />
+                    </columns>
+                </TableView>
+                <Button fx:id="buttonMovieListGoBack" alignment="CENTER" layoutX="260.0" layoutY="647.0" mnemonicParsing="false" onAction="#onGoBackClick" text="Go Back">
+                    <font>
+                        <Font name="Palatino Linotype" size="24.0" />
+                    </font>
+                </Button>
+                <Label fx:id="maxRev" alignment="CENTER" layoutX="7.0" layoutY="69.0" prefHeight="31.0" prefWidth="621.0" text="maxRev">
+                    <font>
+                        <Font name="Palatino Linotype" size="24.0" />
+                    </font>
+                </Label>
+            </children></AnchorPane>
+    </content>
+</ScrollPane>
